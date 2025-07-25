@@ -15,8 +15,4 @@ modules:
   - from-file: components/00-gnome-flathubify.yml
   - from-file: components/01-container-apps.yml
 
-  - type: script
-    scripts:
-      - installproprietarypackages.sh
-
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
