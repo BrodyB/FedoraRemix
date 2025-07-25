@@ -4,7 +4,4 @@ modules:
   - type: akmods
     base: bazzite
     install:
-    - xone # Xbox One controller/wireless receiver driver
-    - wl
-    - v4l2loopback
     - framework-laptop # Framework 13/16 support
