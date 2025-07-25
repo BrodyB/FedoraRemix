@@ -1,0 +1,19 @@
+# This adds distrobox to easily make containers with
+# terminal-only operating systems
+modules:
+  - type: rpm-ostree
+    install:
+    - distrobox
+    - gdb
+    - git
+    - git-lfs
+    - libvirt # For Gnome Boxes communication with host OS
+    - p7zip
+
+  - type: default-flatpaks
+    notify: false # Send notification after install/uninstall is finished (true/false)
+    system:
+      install:
+        - com.ranfdev.DistroShelf # Manage containers made with Distrobox
+        - com.usebottles.bottles # Run Windows applications
+        - it.mijorus.gearlever # Install/Manage AppImages

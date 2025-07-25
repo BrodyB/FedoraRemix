@@ -1,0 +1,10 @@
+modules:
+  # Let's get Bazzite's kernel, which includes a set of tweaks
+  # to improve the gaming experience
+  - type: akmods
+    base: bazzite
+    install:
+    - xone # Xbox One controller/wireless receiver driver
+    - wl
+    - v4l2loopback
+    - framework-laptop # Framework 13/16 support

@@ -1,0 +1,22 @@
+# First, we'll remove the provided Fedora Flatpaks and
+# replace those with the versions available on FlatHub.
+modules:
+  - type: default-flatpaks
+    notify: false # Send notification after install/uninstall is finished (true/false)
+    system:
+      remove:
+        - org.gnome.Calculator
+        - org.gnome.Calendar
+        - org.gnome.Contacts
+        - org.fedoraproject.MediaWriter
+        - org.gnome.Papers
+        - org.gnome.Tour
+  - type: default-flatpaks
+    notify: false # Send notification after install/uninstall is finished (true/false)
+    system:
+      install:
+        - org.gnome.Calculator
+        - org.gnome.Calendar
+        - org.gnome.Contacts
+        - org.fedoraproject.MediaWriter
+        - org.gnome.Papers

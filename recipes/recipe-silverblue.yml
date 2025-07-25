@@ -1,0 +1,22 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: silverblue-remix
+description: Fedora Silverblue, with the Bazzite kernel and some tweaks.
+
+base-image: ghcr.io/ublue-os/silverblue-main
+image-version: 42 # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  # Include everything from the common includes
+  - from-file: components/00-kernel.yml
+  - from-file: components/00-gnome-flathubify.yml
+  - from-file: components/01-container-apps.yml
+
+  - type: script
+    scripts:
+      - installproprietarypackages.sh
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
