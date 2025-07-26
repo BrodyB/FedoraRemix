@@ -8,15 +8,28 @@ modules:
         - org.gnome.Calculator
         - org.gnome.Calendar
         - org.gnome.Contacts
-        - org.fedoraproject.MediaWriter
         - org.gnome.Papers
-        - org.gnome.Tour
+        
+  - type: rpm-ostree
+    remove:
+    - gnome-tour
+    - gnome-classic-session
+    - gnome-shell-extension-background-logo
+    - gnome-system-monitor
+    - htop
+    - nvtop
+
+  - type: script
+    snippets:
+    - "rm /usr/share/applications/org.gnome.Shell.PortalHelper.desktop"
+
   - type: default-flatpaks
-    notify: false # Send notification after install/uninstall is finished (true/false)
+    notify: false
     system:
       install:
-        - org.gnome.Calculator
-        - org.gnome.Calendar
-        - org.gnome.Contacts
-        - org.fedoraproject.MediaWriter
-        - org.gnome.Papers
+      - org.gnome.Calculator
+      - org.gnome.Calendar
+      - org.gnome.Contacts
+      - org.gnome.Papers
+      - io.missioncenter.MissionCenter
+      - com.mattjakeman.ExtensionManager

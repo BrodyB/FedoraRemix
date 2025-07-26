@@ -4,4 +4,4 @@ modules:
   - type: akmods
     base: bazzite
     install:
-    - framework-laptop # Framework 13/16 support
+    - none
