@@ -4,4 +4,4 @@ modules:
   - type: akmods
     base: bazzite
     install:
-    - none
+    - xone

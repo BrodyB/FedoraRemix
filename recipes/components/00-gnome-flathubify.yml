@@ -2,15 +2,22 @@
 # replace those with the versions available on FlatHub.
 modules:
   - type: default-flatpaks
-    notify: false # Send notification after install/uninstall is finished (true/false)
-    system:
+    configurations:
+    - notify: false # Send notification after install/uninstall is finished (true/false)
+      scope: system
       remove:
         - org.gnome.Calculator
         - org.gnome.Calendar
         - org.gnome.Contacts
         - org.gnome.Papers
-        
+          
   - type: rpm-ostree
+    install:
+    - gdb
+    - git
+    - git-lfs
+    - libvirt # For Gnome Boxes communication with host OS
+    - p7zip
     remove:
     - gnome-tour
     - gnome-classic-session
@@ -18,18 +25,41 @@ modules:
     - gnome-system-monitor
     - htop
     - nvtop
-
-  - type: script
-    snippets:
-    - "rm /usr/share/applications/org.gnome.Shell.PortalHelper.desktop"
+    - yelp
 
   - type: default-flatpaks
-    notify: false
-    system:
-      install:
-      - org.gnome.Calculator
-      - org.gnome.Calendar
-      - org.gnome.Contacts
-      - org.gnome.Papers
-      - io.missioncenter.MissionCenter
-      - com.mattjakeman.ExtensionManager
+    configurations:
+      - notify: true
+        scope: system
+        install:
+        - org.gnome.Calculator
+        - org.gnome.Calendar
+        - org.gnome.Contacts
+        - org.gnome.Papers # PDF Reader
+        - org.gnome.DejaDup # Backup utility
+        - org.gnome.TextEditor
+        - org.gnome.FileRoller # Archive Extractor/Compressor
+        - org.gnome.font-viewer # See fonts installed
+        - org.gnome.Loupe # Image viewer
+        - org.gnome.clocks # Show world clocks
+        - org.gnome.Snapshot # Camera app
+        - org.gnome.baobab # Disk Usage Analyzer
+        - org.gnome.Characters # Find special characters
+        - org.gnome.Showtime # Video player
+        - org.gnome.Weather
+        - org.gnome.Decibels # Audio player
+        - io.missioncenter.MissionCenter # Task Manager
+        - com.mattjakeman.ExtensionManager # Install/find GNOME extensions
+  
+  - type: gnome-extensions
+    install:
+      - AppIndicator and KStatusNotifierItem Support
+      - User Themes
+      - GSConnect
+      - 36 # Lock Keys - Show OSD when Caps Lock is pressed
+
+  - type: gschema-overrides
+    include:
+    - zz0-common.gschema.override
+
+  - type: initramfs
