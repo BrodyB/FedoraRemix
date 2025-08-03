@@ -30,21 +30,19 @@ modules:
         - io.missioncenter.MissionCenter # Task Manager
         - com.mattjakeman.ExtensionManager # Install/find GNOME extensions
           
-  # - type: rpm-ostree
-  #   install:
-  #   - gdb
-  #   - git
-  #   - git-lfs
-  #   - libvirt # For Gnome Boxes communication with host OS
-  #   - p7zip
-  #   remove:
-  #   - gnome-tour
-  #   - gnome-classic-session
-  #   - gnome-shell-extension-background-logo
-  #   - gnome-system-monitor
-  #   - htop
-  #   - nvtop
-  #   - yelp
+  - type: rpm-ostree
+    install:
+    - gdb
+    - git
+    - git-lfs
+    - libvirt # For Gnome Boxes communication with host OS
+    - p7zip
+    remove:
+    - gnome-tour
+    - gnome-classic-session
+    - gnome-shell-extension-background-logo
+    - gnome-system-monitor
+    - yelp
   
   - type: gnome-extensions
     install:
@@ -55,6 +53,6 @@ modules:
 
   - type: gschema-overrides
     include:
-    - zz0-common.gschema.override
+    - zz1-gnome_settings.gschema.override
 
-  - type: initramfs
+  # - type: initramfs
