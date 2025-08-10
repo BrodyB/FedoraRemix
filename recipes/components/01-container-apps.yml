@@ -12,5 +12,3 @@ modules:
         install:
           - com.ranfdev.DistroShelf # Manage containers made with Distrobox
           - com.usebottles.bottles # Run Windows applications
-          - it.mijorus.gearlever # Install/Manage AppImages
-          - com.github.tchx84.Flatseal # Never leave home without your Flatseal

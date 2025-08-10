@@ -1,0 +1,48 @@
+# ---------- INTERFACE TWEAKS ------------
+[org.gnome.desktop.interface]
+gtk-theme='adw-gtk3'
+color-scheme='prefer-dark'
+show-battery-percentage=true
+clock-show-weekday=true
+
+[org.gnome.mutter]
+check-alive-timeout=uint32 20000
+center-new-windows=true
+
+[org.gnome.nautilus.icon-view]
+default-zoom-level='small'
+
+[org.gnome.desktop.peripherals.touchpad]
+tap-to-click=false
+
+[org.gnome.settings-daemon.plugins.power]
+ambient-enabled=false
+
+[org.gnome.desktop.datetime]
+automatic-timezone=true
+
+[org.gtk.gtk4.Settings.FileChooser]
+sort-directories-first=true
+show-hidden=true
+
+[org.gtk.Settings.FileChooser]
+sort-directories-first=true
+
+# ---------- INPUT AND SHORTCUTS ------------
+
+[org.gnome.desktop.peripherals.keyboard]
+numlock-state=true
+
+[org.gnome.settings-daemon.plugins.power]
+power-button-action='interactive'
+
+#[org.gnome.settings-daemon.plugins.media-keys]
+#home=['<Super>e']
+#www=['<Super>b']
+#custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
+
+#[org.gnome.desktop.app-folders.System]
+#app=['org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.FileRoller.desktop', 'io.missioncenter.MissionCenter.desktop']
+
+#[org.gnome.shell]
+#app-picker-layout=[{'851e4780-5b33-4dca-8f4f-7df590b768ed': <{'position': <0>}>, 'System': <{'position': <1>}>, 'org.gnome.Settings.desktop': <{'position': <2>}>, 'org.gnome.DejaDup.desktop': <{'position': <3>}>, 'com.github.tchx84.Flatseal.desktop': <{'position': <4>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <5>}>}]

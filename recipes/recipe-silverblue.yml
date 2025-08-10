@@ -1,16 +1,16 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: silverblue-remix
-description: Fedora Silverblue, with minor tweaks.
+name: Bluefin Minimal
+description: Takes Bluefin Stable and strips out most of the applications and additions.
 
-base-image: quay.io/fedora-ostree-desktops/silverblue
-image-version: 42 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/bluefin
+image-version: stable
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
   # Include everything from the common includes
-  - from-file: components/00-gnome-baseline.yml
+  # - from-file: components/00-gnome-baseline.yml
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
