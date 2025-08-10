@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: Bluefin Minimal
+name: bluefin-minimal
 description: Takes Bluefin Stable and strips out most of the applications and additions.
 
 base-image: ghcr.io/ublue-os/bluefin
